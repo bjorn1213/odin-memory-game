@@ -1,20 +1,30 @@
 .page-content{
-    padding: 100px;
+    --card-size: 150px;
+    padding: 50px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, 150px);
-    grid-auto-rows: 150px;
+    grid-template-columns: repeat(auto-fill, var(--card-size));
+    grid-auto-rows: var(--card-size);
     gap: 20px;
 }
 
 .memory-card {
     height: 100%;
     width: 100%;
-    background-color: purple;
+    background-color: #bbbbbb;
 
     justify-self: center;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-radius: 10%;
+    transition: background-color 0.2s ease;
+    transition: transform 0.2s ease;
+}
+
+.memory-card:hover {
+    background-color: white;
+    transform: scale(0.99);
 }

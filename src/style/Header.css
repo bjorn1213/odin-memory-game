@@ -1,12 +1,30 @@
 
 .header {
+    padding: 10px;
     width: 100%;
-    background-color: blue;
+    background-color: #4545b1;
     display: grid;
     grid-template-columns: 6fr 1fr;
+
+    border-bottom: 3px solid #8686f1;
 }
 
 h1, p {
     margin: 0;
     padding: 0;
+    line-height: 1;
+}
+
+.header > * {
+    align-self: center;
+}
+
+.page-title {
+    font-size: 2.5em;
+    justify-self: center;
+}
+
+.score-p {
+    font-weight: 500;
+    margin: 5px 0;
 }

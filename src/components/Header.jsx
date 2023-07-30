@@ -1,7 +1,7 @@
 import "../style/Header.css";
 
 function PageTitle() {
-  return <h1 className="page-title">Memory game!</h1>;
+  return <h1 className="page-title">Pokemon memory game</h1>;
 }
 
 function ScoreDisplay({ score, bestScore }) {
