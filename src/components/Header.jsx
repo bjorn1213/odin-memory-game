@@ -4,23 +4,20 @@ function PageTitle() {
   return <h1 className="page-title">Memory game!</h1>;
 }
 
-function ScoreDisplay() {
-  const curScore = 0;
-  const bestScore = 10;
-
+function ScoreDisplay({ score, bestScore }) {
   return (
     <div className="score-container">
-      <p className="score-p">Current score: {curScore}</p>
+      <p className="score-p">Current score: {score}</p>
       <p className="score-p">Best score: {bestScore}</p>
     </div>
   );
 }
 
-function Header() {
+function Header({ score, bestScore }) {
   return (
     <div className="header">
       <PageTitle />
-      <ScoreDisplay />
+      <ScoreDisplay score={score} bestScore={bestScore} />
     </div>
   );
 }

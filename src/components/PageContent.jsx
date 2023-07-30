@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../style/PageContent.css";
 import getPokemonImageSrc from "../utility/getImageSrc";
 
-function MemoryCard({ pokemonId }) {
+function MemoryCard({ pokemonId, onClickCallback }) {
   const [imgSrc, setImgSrc] = useState("");
 
   useEffect(() => {
@@ -11,19 +11,31 @@ function MemoryCard({ pokemonId }) {
   }, [pokemonId]);
 
   return (
-    <div className="memory-card">
+    <div className="memory-card" onClick={onClickCallback}>
       <img src={imgSrc} alt="" />
     </div>
   );
 }
 
-function PageContent() {
+function PageContent({ processIdClick }) {
   const idArray = [1, 2, 3, 4, 5, 6, 7];
+
+  function clickWrapper(id) {
+    return function () {
+      processIdClick(id);
+    };
+  }
 
   return (
     <div className="page-content">
       {idArray.map((id) => {
-        return <MemoryCard key={id} pokemonId={id} />;
+        return (
+          <MemoryCard
+            onClickCallback={clickWrapper(id)}
+            key={id}
+            pokemonId={id}
+          />
+        );
       })}
     </div>
   );
