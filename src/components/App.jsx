@@ -1,15 +1,16 @@
-import '../style/App.css'
-import Header from './Header'
-import PageContent from './PageContent'
+import "../style/App.css";
+import Header from "./Header";
+import PageContent from "./PageContent";
 
 function App() {
-
   return (
     <>
-      <Header/>
-      <PageContent/>
+      <div className="app-div">
+        <Header />
+        <PageContent />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

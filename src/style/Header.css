@@ -1,0 +1,11 @@
+
+.header {
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+}
+
+h1, p {
+    margin: 0;
+    padding: 0;
+}
