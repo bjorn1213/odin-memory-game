@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
 import "../style/PageContent.css";
+import getPokemonImageSrc from "../utility/getImageSrc";
 
 function MemoryCard({ pokemonId }) {
-  return <div className="memory-card"> asd {pokemonId}</div>;
+  const [imgSrc, setImgSrc] = useState("");
+
+  useEffect(() => {
+    const src = getPokemonImageSrc(pokemonId);
+    src.then((x) => setImgSrc(x));
+  }, [pokemonId]);
+
+  return (
+    <div className="memory-card">
+      <img src={imgSrc} alt="" />
+    </div>
+  );
 }
 
 function PageContent() {
