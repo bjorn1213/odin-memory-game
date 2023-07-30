@@ -17,9 +17,7 @@ function MemoryCard({ pokemonId, onClickCallback }) {
   );
 }
 
-function PageContent({ processIdClick }) {
-  const idArray = [1, 2, 3, 4, 5, 6, 7];
-
+function PageContent({ processIdClick, pokemonIds }) {
   function clickWrapper(id) {
     return function () {
       processIdClick(id);
@@ -28,7 +26,7 @@ function PageContent({ processIdClick }) {
 
   return (
     <div className="page-content">
-      {idArray.map((id) => {
+      {pokemonIds.map((id) => {
         return (
           <MemoryCard
             onClickCallback={clickWrapper(id)}

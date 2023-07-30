@@ -4,6 +4,19 @@ import "../style/App.css";
 import Header from "./Header";
 import PageContent from "./PageContent";
 
+import shuffle from "../utility/shuffle";
+
+const pokemonIds = [];
+const pokemonCount = 50;
+
+for (let i = 0; i < pokemonCount; i++) {
+  let nextValue = Math.ceil(Math.random() * 1011);
+  while (pokemonIds.includes(nextValue)) {
+    nextValue = Math.ceil(Math.random() * 1011);
+  }
+  pokemonIds.push(nextValue);
+}
+
 function App() {
   const [clickedIds, setClickedIds] = useState([]);
   const [score, setScore] = useState(0);
@@ -26,7 +39,10 @@ function App() {
     <>
       <div className="app-div">
         <Header score={score} bestScore={bestScore} />
-        <PageContent processIdClick={processIdClick} />
+        <PageContent
+          processIdClick={processIdClick}
+          pokemonIds={shuffle(pokemonIds)}
+        />
       </div>
     </>
   );
